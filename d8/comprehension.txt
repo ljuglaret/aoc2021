@@ -1,0 +1,128 @@
+énoncé
+
+  0:      1:      2:      3:      4:
+ aaaa    ....    aaaa    aaaa    ....
+b    c  .    c  .    c  .    c  b    c
+b    c  .    c  .    c  .    c  b    c
+ ....    ....    dddd    dddd    dddd
+e    f  .    f  e    .  .    f  .    f
+e    f  .    f  e    .  .    f  .    f
+ gggg    ....    gggg    gggg    ....
+
+  5:      6:      7:      8:      9:
+ aaaa    aaaa    aaaa    aaaa    aaaa
+b    .  b    .  .    c  b    c  b    c
+b    .  b    .  .    c  b    c  b    c
+ dddd    dddd    ....    dddd    dddd
+.    f  e    f  .    f  e    f  .    f
+.    f  e    f  .    f  e    f  .    f
+ gggg    gggg    ....    gggg    gggg
+
+
+Question 1
+
+
+0 -> 6
+1 -> 2
+2 -> 5
+3 -> 5
+4 -> 4
+5 -> 5
+6 -> 6
+7 -> 3
+8 -> 7
+9 -> 6
+
+On ne peut pas déterminer de différences entre :
+    o) 0, 6 et 9    =>  6
+    o) 2, 3 et 5    =>  5
+
+
+Question 2
+
+prérequis : soustraction de deux chaines
+
+soustraction(s1,s2):
+    premierOperande = length maximale 
+    deuxiemeOperande = length minimale 
+
+    Pour tous les elt de deuxiemeOperande 
+        si elt n'est pas dans premierOperande on le garde
+
+avec abcdefg n'importe quelle lettres
+-aaaa-
+b----b
+c----c
+-dddd-
+e----e
+f----f
+g----g
+
+
+Partie 1
+
+Trouver le pattern associé à l'entrée
+acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab
+
+En reprenant la question 1
+1 est représenté par 2 caractères
+4 est représenté par 4 caractères
+7 est représenté par 3 caractères
+8 est représenté par 7 caractères
+
+Donc ici
+ab      représente   1  ab
+eafb    représente   4  abef
+dab     représente   7  abd
+acedgfb représente   8  abcdefg
+
+On va étudier toutes les config possibles 
+contraintes sur 
+taille 6
+0 doit contenir 7 
+6 par élimination
+9 = 7 + 4 + 3
+
+taille 5
+2 par élimination
+3 doit contenir 7 
+5 doit contenir 9 mais pas 7
+
+acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab
+   8                        7                4           1
+Ce qui donne : 
+ dddd
+e    a
+e    a
+ ffff
+g    b
+g    b
+ cccc
+
+La matrice est remplie : 
+0 : mat[0][1]+mat[1][0]+mat[1][5]+mat[4][0]+mat[5][0]+mat[6][1] (degcba)
+2 : mat[][]+mat[][]+mat[][]+mat[][]+mat[][]
+3 : mat[][]+mat[][]+mat[][]+mat[][]+mat[][]
+5 : mat[][]+mat[][]+mat[][]+mat[][]+mat[][]
+6 : mat[][]+mat[][]+mat[][]+mat[][]+mat[][]+mat[][]
+9 : mat[][]+mat[][]+mat[][]+mat[][]+mat[][]+mat[][]
+
+On peut maintenant traduire : cdfbe gcdfa fbcad cefabd cdfgeb cagedb 
+                                5     2                         0
+
+Partie 2 
+ avec un autre pattern (celui trouvé prédemment)
+
+
+   0:      1: ab      2: dafgc      3:dafbc      4:
+
+  5:      6:      7:      8:      9:
+
+    etape 1 : egalite <=> soustraction = 0 
+    
+    étape 2
+    cdfeb fcadb cdfeb cdbaf
+    établir les correspondances
+
+    étape 3
+    les additionner toutes et afficher le résultat
