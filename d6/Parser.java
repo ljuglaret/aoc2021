@@ -36,16 +36,6 @@ class Parser {
         System.out.println(initial.size());
     }
 
-    public int compte(long[]t, int x){
-        int res = 0 ;
-        for (int i = 0 ; i < t.length ; i++){
-            if(t[i] == x){
-                res++;   
-            }
-        }
-        return res;
-    }
-
     public void affPoissons(long[] grille){
         for (int i = 0 ; i < grille.length ; i++){
             System.out.print(grille[i]);
@@ -62,16 +52,16 @@ class Parser {
             fish[elt]++;
         }
 
-        for (int d = 1; d <= 80; d++) {    
+        for (int d = 1; d <= 18 ; d++) {    
             //Each day, a 0 becomes a 6 and adds a new 8 to the end of the list,
             long sixAAjouter = fish[0];
             
-            for (int i = 0; i <8; i++) {
+            for (int i = 0; i < 8; i++) {
             // while each other number decreases by 1 if it was present at the start of the day.
-                fish[i] = fish[i+1 ] ;
+                fish[i] = fish[i + 1] ;
             }
 
-            fish[6] = fish[6]+sixAAjouter;
+            fish[6] = fish[6] + sixAAjouter;
             fish[8] = sixAAjouter;
             //affPoissons(fish);
 
