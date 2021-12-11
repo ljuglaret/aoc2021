@@ -19,8 +19,6 @@ class Parser {
             for (int i = 0; i < ligneT.length; i++) {
                 points.add(Integer.parseInt(
                         String.valueOf(ligneT[i])));
-                System.out.println(Integer.parseInt(
-                        String.valueOf(ligneT[i])));
             }
 
         }
@@ -58,28 +56,25 @@ class Parser {
     public void poissons2() throws Exception {
         List<Integer> initial = lit();
 
-        //10
         long[] fish = new long[9];
 
         for (int elt : initial) {
-          
             fish[elt]++;
-
         }
-
 
         for (int d = 1; d <= 80; d++) {    
             //Each day, a 0 becomes a 6 and adds a new 8 to the end of the list,
-            long sixAAjouter=0;
-            sixAAjouter= fish[0];
+            long sixAAjouter = fish[0];
             
             for (int i = 0; i <8; i++) {
             // while each other number decreases by 1 if it was present at the start of the day.
                 fish[i] = fish[i+1 ] ;
             }
-            fish[8] = sixAAjouter;
+
             fish[6] = fish[6]+sixAAjouter;
-            affPoissons(fish);
+            fish[8] = sixAAjouter;
+            //affPoissons(fish);
+
         }
         long somme = 0;
         for (int i = 0; i < fish.length; i++) {
