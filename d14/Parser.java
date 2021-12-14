@@ -20,7 +20,7 @@ class Parser {
             }
         }
        // System.out.println(derniereChaine());
-        System.out.println(q2(10));
+        System.out.println(q2(4));
     }
 
 
@@ -97,10 +97,11 @@ class Parser {
                     char caractereMilieu =  instructions.get(nomDuCouple).charAt(0);
                     String gauche = nomDuCouple.charAt(0) + String.valueOf(caractereMilieu);
                     String droite = String.valueOf(caractereMilieu) + nomDuCouple.charAt(1);
-                   
+                 
                     additionSiPossible(couplesLignesCourante, gauche, couples.get(nomDuCouple));
 
                     additionSiPossible(couplesLignesCourante, droite, couples.get(nomDuCouple));
+                    System.out.println("nouveaux couple "+i+"-" + couplesLignesCourante);
 
                     if(compterLettres.containsKey(caractereMilieu)){
                         //ancienne somme + nouvelle somme des lettres 
