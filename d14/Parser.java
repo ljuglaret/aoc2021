@@ -97,10 +97,8 @@ class Parser {
                     char caractereMilieu =  instructions.get(nomDuCouple).charAt(0);
                     String gauche = nomDuCouple.charAt(0) + String.valueOf(caractereMilieu);
                     String droite = String.valueOf(caractereMilieu) + nomDuCouple.charAt(1);
-                    if (!couplesLignesCourante.containsKey(nomDuCouple)){
-                        couplesLignesCourante.put(gauche, couples.get(nomDuCouple));
-                    }
-                    //additionSiPossible(couplesLignesCourante, gauche, couples.get(nomDuCouple));
+                   
+                    additionSiPossible(couplesLignesCourante, gauche, couples.get(nomDuCouple));
 
                     additionSiPossible(couplesLignesCourante, droite, couples.get(nomDuCouple));
 
