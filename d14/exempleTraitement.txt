@@ -1,0 +1,74 @@
+CH -> B
+HH -> N
+CB -> H
+NH -> C
+HB -> C
+HC -> B
+HN -> C
+NN -> C
+BH -> H
+NC -> B
+NB -> B
+BN -> B
+BB -> N
+BC -> B
+CC -> N
+CN -> C
+
+
+
+Template:     NNCB
+After step 1: NCNBCHB
+After step 2: NBCCNBBBCBHCB
+After step 3: NBBBCNCCNBBNBNBBCHBHHBCHB
+After step 4: NBBNBNBBCCNBCNCCNBBNBBNBBBNBBNBBCBHCBHHNHCBBCBHCB
+
+--------------------------------------------------------------------------------------------------------
+
+-> Initialisation 
+lettres : NCB => B(1),C(1),N(2)
+couples : 
+NN(1)
+NC(1)
+CB(1)
+--------------------------------------------------------------------------------------------------------
+
+->Itération
+
+	ité1 
+     lettre couplesGauche couplesDroite
+NN -> 	C 	: NC(1) 	CN(1)
+NC -> 	B 	: NB(1) 	BC(1)
+CB -> 	H 	: CH(1) 	HB(1)
+
+
+mapLettres => B(2),C(2),H(1),N(2)
+
+----------------------------------------------------
+	ité2
+	   lettre couplesGauche couplesDroite
+NC(1) -> 	B 	: NB 		BC
+CN(1) -> 	C 	: CC 		CN
+NB(1) -> 	B 	: NB 		BB 
+BC(1) -> 	B 	: BB 		BC
+CH(1) -> 	B 	: CB 		BH
+HB(1) -> 	C 	: HC 		CB
+
+couple    => NB(2) , CC(1) , BB(2), CB(1) ,  HC(1) , BC(2) , BH(1) , HC(1) , CB(1)
+mapLettres => B(5),C(4),H(1),N(2)
+
+----------------------------------------------------
+	ité3
+		lettre couplesGauche couplesDroite
+NB(2) 	-> 	B
+BC(2) 	-> 	B
+CC 	-> 	N
+CN 	-> 	C
+NB 	-> 	B
+BB(2) 	-> 	N
+CB(2) 	-> 	H
+BH 	-> 	H
+HC 	-> 	B
+
+
+mapLettres => B(10),C(5),H(1),N(2)
