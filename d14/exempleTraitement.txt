@@ -42,7 +42,7 @@ NC -> 	B 	: NB 		BC
 CB -> 	H 	: CH 		HB
 
 
-couple    => NC(1) , CN(1) , NB(1), BC(1) ,  CH(1) , HB(1) 
+couples    => NC(1) , CN(1) , NB(1), BC(1) ,  CH(1) , HB(1) 
 mapLettres => B(2),C(2),H(1),N(2)
 
 ----------------------------------------------------
@@ -55,22 +55,22 @@ BC(1) -> 	B 	: BB 		BC
 CH(1) -> 	B 	: CB 		BH
 HB(1) -> 	C 	: HC 		CB
 
-couple    => NB(2) , CC(1) , BB(2), CB(1) ,  HC(1) , BC(2) , BH(1) , HC(1) , CB(2)
+couples    => NB(2) , CC(1) , BB(2), CB(1) ,  HC(1) , BC(2) , BH(1) , HC(1) , CB(2)
 mapLettres => B(2+4=6),C(4),H(1),N(2)
 
 ----------------------------------------------------
 	ité3
 		lettre couplesGauche couplesDroite
-NB(2) 	-> 	B	: NB(2)		BB(2)
-BC(2) 	-> 	B	: BB(2)		BC
+NB(2) 	-> 	B(2)	: NB(2)		BB(2)
+BC(2) 	-> 	B(2)	: BB(2)		BC
 CC 	-> 	N	: CN		NC
 CN 	-> 	C	: CC		CN
 NB 	-> 	B	: NB(1)		BB
-BB(2) 	-> 	N	: BN		NB(1)
-CB(2) 	-> 	H	: CH		HB
+BB(2) 	-> 	N(2)	: BN		NB(1)
+CB(2) 	-> 	H(2)	: CH		HB
 BH 	-> 	H	: BH		HH
 HC 	-> 	B	: HB		BC
 
 
-couple    => NB(4) , CC(1) , BB(4), CB(1) ,  HC(1) , BC(3) , BH(1) , HC(1) 
-mapLettres => B(6+4=11),C(4+1=5),H(1),N(2)
+couples    => NB(4) , CC(1) , BB(4), CB(1) ,  HC(1) , BC(3) , BH(1) , HC(1) 
+mapLettres => B(6+4=11),C(4+1=5),H(1+2=3),N(2+3=5)

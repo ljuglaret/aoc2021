@@ -20,7 +20,7 @@ class Parser {
             }
         }
        // System.out.println(derniereChaine());
-        System.out.println(q2(4));
+        System.out.println(q2(10));
     }
 
 
@@ -87,7 +87,7 @@ class Parser {
             String cle =  "" + pattern.charAt(i) + pattern.charAt(i+1);
            additionSiPossible(couples, cle, 1L);
         }
-     
+
         // Décompte des caractères trouvés à chaque itération
         for (int i = 0; i < x; i++) {
             HashMap<String, Long> couplesLignesCourante = new HashMap<>();
@@ -101,11 +101,14 @@ class Parser {
                     additionSiPossible(couplesLignesCourante, gauche, couples.get(nomDuCouple));
 
                     additionSiPossible(couplesLignesCourante, droite, couples.get(nomDuCouple));
-                    System.out.println("nouveaux couple "+i+"-" + couplesLignesCourante);
-
+                    //System.out.println("nouveaux couple "+i+"-" + couplesLignesCourante);
+                    
+                    //ancienne somme + nouvelle somme des lettres 
                     if(compterLettres.containsKey(caractereMilieu)){
-                        //ancienne somme + nouvelle somme des lettres 
                         compterLettres.put(caractereMilieu, compterLettres.get(caractereMilieu)+ couples.get(nomDuCouple));
+                    }
+                    else{
+                        compterLettres.put(caractereMilieu, 1L);
                     }
                 }
             }
