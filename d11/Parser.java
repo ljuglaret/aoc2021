@@ -89,17 +89,6 @@ class Parser {
         return count;
     }
 
-    public boolean grille0(int[][] grille){
-        for (int i = 0 ; i < grille.length; i++ ){
-            for (int j = 0 ; j < grille.length; j++ ){
-                if (grille[i][j]!=0){
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     public void affGrille(int[][] grille){
         for (int i = 0 ; i < grille.length; i++ ){
             for (int j = 0 ; j < grille.length; j++ ){
@@ -110,6 +99,4 @@ class Parser {
         System.out.println();
         System.out.println();
     }
-
-
 }
