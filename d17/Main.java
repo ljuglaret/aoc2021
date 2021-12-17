@@ -6,6 +6,7 @@ public class Main {
         int ymin = -73;// -10;//
         int ymax = -46;// -5;//
 
+        int posyMax = 0;
         int count = 0;
         for (int i = 0; i <= xmax; i++) {
             for (int j = -ymin; j >= ymin; j--) {
@@ -15,13 +16,19 @@ public class Main {
 
                 int vx = i;
                 int vy = j;
+                int posTemp = 0;
 
                 while (posy >= ymin) {
                     posx = posx + vx;
                     posy = posy + vy;
                     boolean posEstDansCarre = posx >= xmin && posx <= xmax && posy >= ymin && posy <= ymax;
-
+                    if (vy == 0) {
+                        posTemp = posy;
+                    }
                     if (posEstDansCarre) {
+                        if (posTemp >= posyMax) {
+                            posyMax = posTemp;
+                        }
                         count++;
                         break;
                     }
@@ -36,6 +43,8 @@ public class Main {
                 }
             }
         }
+        System.out.println("posymax = " + posyMax);
+
         System.out.println(count);
 
     }
